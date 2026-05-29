@@ -1,0 +1,151 @@
+/* styles/globals.css */
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap');
+@import 'leaflet/dist/leaflet.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-syne: 'Syne', sans-serif;
+  --font-dm-sans: 'DM Sans', sans-serif;
+  --font-jetbrains: 'JetBrains Mono', monospace;
+  --brand: #118dee;
+  --brand-light: #eef9ff;
+  --danger: #ef4444;
+  --warning: #f59e0b;
+  --success: #22c55e;
+  --surface: #ffffff;
+  --surface-50: #f8fafc;
+  --border: #e2e8f0;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-dm-sans);
+  background: var(--surface-50);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+/* Leaflet fix */
+.leaflet-container { font-family: var(--font-dm-sans) !important; z-index: 0; }
+.leaflet-control-zoom { border: none !important; box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important; }
+
+/* Pulse animation for live indicator */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.2); }
+}
+.pulse-dot { animation: pulse-dot 1.4s ease-in-out infinite; }
+
+/* Bus marker bounce */
+@keyframes bus-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+.bus-moving { animation: bus-bounce 1s ease-in-out infinite; }
+
+/* Slide in animation */
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.slide-up { animation: slide-up 0.3s ease-out forwards; }
+
+/* Alert flash */
+@keyframes alert-flash {
+  0%, 100% { background-color: #fef2f2; }
+  50%       { background-color: #fee2e2; }
+}
+.alert-critical { animation: alert-flash 1.2s ease-in-out infinite; }
+
+/* Custom badge */
+.badge {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 2px 8px; border-radius: 999px; font-size: 11px; font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.badge-green  { background: #dcfce7; color: #15803d; }
+.badge-red    { background: #fee2e2; color: #b91c1c; }
+.badge-amber  { background: #fef9c3; color: #a16207; }
+.badge-blue   { background: #dbeafe; color: #1d4ed8; }
+.badge-gray   { background: #f1f5f9; color: #475569; }
+.badge-orange { background: #ffedd5; color: #c2410c; }
+
+/* Card */
+.card {
+  background: white;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.05);
+}
+
+/* Stat number */
+.stat-num {
+  font-family: var(--font-syne);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--text-primary);
+}
+
+/* Progress bar */
+.progress-bar {
+  height: 6px;
+  background: #e2e8f0;
+  border-radius: 999px;
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  border-radius: 999px;
+  transition: width 0.5s ease;
+}
+
+/* Tab nav */
+.tab-nav {
+  display: flex;
+  background: #f1f5f9;
+  border-radius: 10px;
+  padding: 4px;
+  gap: 2px;
+}
+.tab-btn {
+  flex: 1; padding: 7px 12px;
+  border-radius: 7px; border: none; cursor: pointer;
+  font-family: var(--font-dm-sans); font-size: 13px; font-weight: 500;
+  color: var(--text-secondary); background: transparent;
+  transition: all 0.18s ease;
+  white-space: nowrap;
+}
+.tab-btn.active {
+  background: white; color: var(--brand);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* SOS button */
+.sos-btn {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: white; border: none; border-radius: 12px;
+  padding: 14px 28px; font-size: 16px; font-weight: 700;
+  cursor: pointer; letter-spacing: 0.05em;
+  box-shadow: 0 4px 16px rgba(239,68,68,0.4);
+  transition: all 0.15s ease;
+  font-family: var(--font-syne);
+}
+.sos-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(239,68,68,0.5);
+}
+.sos-btn:active { transform: translateY(0); }
