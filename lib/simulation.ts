@@ -139,7 +139,7 @@ export function tickBus(bus: SimBus, deltaT: number): SimBus {
   let newLat = bus.lat;
   let newLng = bus.lng;
   let newStopIndex = bus.currentStopIndex;
-  let newStatus = bus.status;
+  let newStatus: SimBus['status'] = bus.status;
   let newEta = bus.eta;
 
   if (dist < 0.0006) {
