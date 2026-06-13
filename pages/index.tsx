@@ -119,7 +119,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Smart School Bus — Kolkata</title>
+        <title>School Shuttle — AFS </title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚌</text></svg>" />
       </Head>
@@ -137,7 +137,7 @@ export default function Home() {
             <span style={{ fontSize: 26 }}>🚌</span>
             <div>
               <div style={{ fontFamily: 'var(--font-syne)', fontWeight: 700, fontSize: 17, color: '#0f172a', lineHeight: 1 }}>
-                SmartBus AFS
+                School Shuttle AFS
               </div>
               <div style={{ fontSize: 11, color: '#94a3b8', marginTop: 2 }}>School Transport Management</div>
             </div>
