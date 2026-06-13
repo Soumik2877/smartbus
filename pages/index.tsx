@@ -137,7 +137,7 @@ export default function Home() {
             <span style={{ fontSize: 26 }}>🚌</span>
             <div>
               <div style={{ fontFamily: 'var(--font-syne)', fontWeight: 700, fontSize: 17, color: '#0f172a', lineHeight: 1 }}>
-                SmartBus Kolkata
+                SmartBus AFS
               </div>
               <div style={{ fontSize: 11, color: '#94a3b8', marginTop: 2 }}>School Transport Management</div>
             </div>
@@ -252,7 +252,7 @@ export default function Home() {
           borderTop: '1px solid #e2e8f0', background: 'white',
           fontSize: 12, color: '#94a3b8',
         }}>
-          Smart School Bus Management System — Kolkata, West Bengal • India Elevate
+          Smart School Bus Management System — AFS Kalaikunda
         </footer>
       </div>
     </>
